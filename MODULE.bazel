@@ -72,6 +72,7 @@ use_repo(crate, crate_index = "crates")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
+    name = "protobuf_maven",
     artifacts = [
         "com.google.caliper:caliper:1.0-beta-3",
         "com.google.code.findbugs:jsr305:3.0.2",
@@ -91,7 +92,7 @@ maven.install(
         "https://repo.maven.apache.org/maven2",
     ],
 )
-use_repo(maven, "maven")
+use_repo(maven, "protobuf_maven")
 
 # Development dependencies
 bazel_dep(name = "googletest", version = "1.14.0", repo_name = "com_google_googletest", dev_dependency = True)
